@@ -4,6 +4,8 @@ import { connectDB } from './src/config/dbConfig.js';
 import stepRouter from './src/routers/stepRouter.js';
 import helmet from 'helmet';
 import cors from 'cors';
+import path from 'path';
+
 const app = express();
 const __dirname = path.resolve();
 
