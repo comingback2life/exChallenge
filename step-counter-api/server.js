@@ -6,7 +6,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 connectDB(); //connect to the database
 
