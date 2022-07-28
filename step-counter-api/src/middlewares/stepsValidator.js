@@ -2,7 +2,7 @@ import Joi from 'joi';
 
 export const validateData = (req, res, next) => {
 	const schema = Joi.object({
-		dateOfStep: Joi.string().required,
+		dateOfStep: Joi.string().required(),
 		stepsTaken: Joi.number().max(100),
 	});
 	const { value, error } = schema.validate(req.body);

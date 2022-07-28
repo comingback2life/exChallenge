@@ -7,6 +7,7 @@ export const getStepData = () => async (dispatch) => {
 		pending: 'Please wait...',
 	});
 	const data = await getSteps;
+	data.result.totalSteps = data.totalSteps; //attaching totalSteps to the result being passed arround
 	dispatch(setStepData(data.result));
 };
 

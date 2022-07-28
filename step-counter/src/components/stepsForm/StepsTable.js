@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import './StepForm.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStepData } from './StepFormAction';
 export const StepsTable = () => {
+	const [totalSteps, setTotalSteps] = useState([]);
 	const { stepsData } = useSelector((state) => state.steps);
+
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(getStepData());
@@ -34,7 +36,7 @@ export const StepsTable = () => {
 			</Table>
 			<div className="d-flex justify-content-between">
 				<p className="px-5">Total</p>
-				<p className="px-4">10</p>
+				<p className="px-4">{stepsData.totalSteps}</p>
 			</div>
 		</Container>
 	);
