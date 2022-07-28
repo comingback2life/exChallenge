@@ -1,7 +1,10 @@
 import axios from 'axios';
 import dayjs from 'dayjs';
 import { useState } from 'react';
-const stepEP = process.env.REACT_APP_STEP_EP;
+const stepEP =
+	process.env.NODE_ENV === 'production'
+		? '/api/v1/steps'
+		: 'http://localhost:8000/api/v1/steps';
 
 export const fetchSteps = async () => {
 	let totalSteps = 0;
