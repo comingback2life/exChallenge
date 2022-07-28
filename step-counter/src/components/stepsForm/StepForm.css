@@ -1,0 +1,30 @@
+.hasSubmitForm {
+	margin-top: 5vh;
+}
+.isSubmitButton {
+	width: 92px;
+	height: 48px;
+	background-color: #fab816 !important;
+	border-color: #fab816;
+	border-radius: 2px;
+}
+.isSubmitButton:hover {
+	border-color: #fab816;
+	border-radius: 2px;
+}
+.isTextBox {
+	box-sizing: border-box;
+	height: 49px;
+	background: #ffffff;
+	border: 1px solid #414142;
+	border-radius: 2px;
+}
+.isHR {
+	border: 1px dashed #d5d5d6;
+}
+@media (max-width: 576px) {
+	.isCol {
+		display: flex;
+		justify-content: flex-start !important;
+	}
+}
