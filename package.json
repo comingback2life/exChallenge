@@ -5,7 +5,7 @@
 	"main": "server.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node step-counter-api/server.js",
+		"start": "node ./step-counter-api/server.js",
 		"dev": "node step-counter-api/server.js",
 		"heroku-postbuild": "cd step-counter && npm install && npm run build "
 	},
