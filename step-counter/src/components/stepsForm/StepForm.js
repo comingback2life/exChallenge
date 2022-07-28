@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import './StepForm.css';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { useDispatch } from 'react-redux';
 import { addStepsData, getStepData } from './StepFormAction';
 
@@ -10,14 +10,19 @@ export const StepForm = () => {
 	const dispatch = useDispatch();
 	const handleOnChange = (e) => {
 		const { name, value } = e.target;
+		if (name === 'dateOfStep') {
+			form.dateOfStep = dayjs(value).format('DD-MMM-YYYY');
+		}
 		setForm({
 			...form,
 			[name]: value,
 		});
+		console.log(form, 'hoc');
 	};
 	const handleOnSubmit = async (e) => {
 		e.preventDefault();
 		dispatch(addStepsData(form)) && dispatch(getStepData());
+		console.log(form);
 	};
 	return (
 		<Container className="px-4">

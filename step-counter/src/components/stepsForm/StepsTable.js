@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Alert, Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import './StepForm.css';
+import dayjs from 'dayjs';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStepData } from './StepFormAction';
 export const StepsTable = () => {
@@ -25,7 +26,7 @@ export const StepsTable = () => {
 									<tr key={item + i}>
 										<td className="py-3">{i + 1}</td>
 										<td className="py-3 text-start" colSpan={3}>
-											{item.dateOfStep}
+											{dayjs(item.dateOfStep).format('DD-MMM-YYYY')}
 										</td>
 										<td className="py-3 text-end">{item.stepsTaken}</td>
 									</tr>
