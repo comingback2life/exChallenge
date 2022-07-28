@@ -1,14 +1,23 @@
 import express from 'express';
-import { recordSteps } from '../models/step-model/Steps.model.js';
+import {
+	getRecordedSteps,
+	recordSteps,
+} from '../models/step-model/Steps.model.js';
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/', async (req, res, next) => {
 	try {
-		console.log('Get Route');
-		res.json({
-			status: 'success',
-			message: 'You have reached the GET Route',
-		});
+		const result = await getRecordedSteps();
+		result
+			? res.json({
+					status: 'success',
+					message: 'Steps found',
+					result,
+			  })
+			: res.json({
+					status: 'error',
+					message: 'Could not load steps, please try again later',
+			  });
 	} catch (error) {
 		next(error);
 	}
