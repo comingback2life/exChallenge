@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8000;
 
 connectDB(); //connect to the database
 
-app.use(express.static(path.resolve(__dirname, 'step-counter/build')));
+app.use(express.static(path.resolve(__dirname, 'step-counter', 'build')));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('*', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'step-counter/build/index.html'));
+	res.sendFile(path.resolve(__dirname, 'step-counter', 'build', 'index.html'));
 });
 app.listen(PORT, (req, res) => {
 	console.log(`Server runing on PORT ${PORT} `);
