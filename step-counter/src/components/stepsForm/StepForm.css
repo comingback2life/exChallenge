@@ -22,7 +22,11 @@
 .isHR {
 	border: 1px dashed #d5d5d6;
 }
-.isBordered {
+td {
+	border-style: dashed !important;
+}
+tr:last-child {
+	border-bottom: 4px solid #d5d5d6;
 }
 @media (max-width: 776px) {
 	.isCol {
