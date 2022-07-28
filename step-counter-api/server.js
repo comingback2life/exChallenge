@@ -5,12 +5,16 @@ import stepRouter from './src/routers/stepRouter.js';
 import helmet from 'helmet';
 import cors from 'cors';
 const app = express();
+const __dirname = path.resolve();
 
 const PORT = process.env.PORT || 8000;
 
 connectDB(); //connect to the database
 
+app.use(express.static(path.resolve(__dirname, 'step-counter/build')));
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(cors());
 
