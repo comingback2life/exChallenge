@@ -9,6 +9,9 @@ export const fetchSteps = async () => {
 	for (let i in result) {
 		totalSteps = totalSteps + result[i].stepsTaken;
 	}
+	//result.sort((a, b) => dayjs(a).isAfter(b))
+
+	console.log(result);
 	const newDataObj = {
 		...data,
 		totalSteps,
