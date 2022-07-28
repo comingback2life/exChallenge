@@ -7,7 +7,7 @@
 }
 .isMidBox {
 	width: 794px;
-	height: 847px;
+	min-height: 847px;
 	left: 364px;
 	top: 10vh;
 	background: #f9f9f9;

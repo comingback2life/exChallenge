@@ -5,3 +5,8 @@ export const fetchSteps = async () => {
 	const { data } = await axios.get(stepEP);
 	return data;
 };
+
+export const addSteps = async (dataObj) => {
+	const { data } = await axios.post(stepEP, dataObj);
+	return data;
+};

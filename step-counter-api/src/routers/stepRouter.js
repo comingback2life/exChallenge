@@ -1,4 +1,5 @@
 import express from 'express';
+import { validateData } from '../middlewares/stepsValidator.js';
 import {
 	getRecordedSteps,
 	recordSteps,
@@ -23,17 +24,17 @@ router.get('/', async (req, res, next) => {
 	}
 });
 
-router.post('/', async (req, res, next) => {
+router.post('/', validateData, async (req, res, next) => {
 	try {
 		const result = await recordSteps(req.body);
 		result?._id
-			? res.send({
+			? res.json({
 					status: 'success',
 					message: 'Steps have been added to the database',
 			  })
-			: res.send({
-					status: 'success',
-					message: 'Steps could not be added to the database',
+			: res.json({
+					status: 'error',
+					message: 'Please try again',
 			  });
 	} catch (error) {
 		next(error);

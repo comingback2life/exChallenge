@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import './StepForm.css';
 import moment from 'moment';
-import { fetchSteps } from '../helpers/axiosHelper';
+import { useDispatch } from 'react-redux';
+import { addStepsData, getStepData } from './StepFormAction';
+
 export const StepForm = () => {
 	const [form, setForm] = useState({});
-
-	useEffect(() => {}, []);
+	const dispatch = useDispatch();
 	const handleOnChange = (e) => {
 		const { name, value } = e.target;
 		setForm({
@@ -14,8 +15,9 @@ export const StepForm = () => {
 			[name]: value,
 		});
 	};
-	const handleOnSubmit = (e) => {
+	const handleOnSubmit = async (e) => {
 		e.preventDefault();
+		dispatch(addStepsData(form)) && dispatch(getStepData());
 	};
 	return (
 		<Container className="px-4">
@@ -29,6 +31,7 @@ export const StepForm = () => {
 								name="dateOfStep"
 								className="isTextBox p-4"
 								onChange={handleOnChange}
+								required
 							></input>
 						</Col>
 						<Col sm={12} md={9} className="d-flex justify-content-end isCol">
@@ -37,6 +40,7 @@ export const StepForm = () => {
 								name="stepsTaken"
 								className="isTextBox p-4 "
 								onChange={handleOnChange}
+								required
 							></input>
 							<Button type="submit" className="mx-2 isSubmitButton">
 								Submit
