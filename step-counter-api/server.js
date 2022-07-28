@@ -31,6 +31,9 @@ app.use((err, req, res, next) => {
 	});
 });
 
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname, 'step-counter/build/index.html'));
+});
 app.listen(PORT, (req, res) => {
 	console.log(`Server runing on PORT ${PORT} `);
 });
