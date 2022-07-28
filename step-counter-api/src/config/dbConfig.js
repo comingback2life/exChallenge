@@ -2,12 +2,8 @@ import mongoose from 'mongoose';
 
 export const connectDB = () => {
 	try {
-		const connectionString = mongoose.connect(
-			'mongodb://localhost:27017/exCoStepCounter'
-		);
-		if (connectionString) {
-			console.log('Connected to database successfully');
-		}
+		const connect = mongoose.connect(process.env.CONNECTION_STRING);
+		connect && console.log('Database has been connected');
 	} catch (error) {
 		console.log(error);
 	}

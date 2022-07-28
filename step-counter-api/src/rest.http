@@ -1,0 +1,13 @@
+### STEP COUNTER API 
+
+##GET STEPS
+GET http://localhost:8000/api/v1/steps
+
+### POST Steps
+POST http://localhost:8000/api/v1/steps
+Content-Type: application/json
+
+{
+  "dateOfStep":"2",
+  "stepsTaken":2
+}
