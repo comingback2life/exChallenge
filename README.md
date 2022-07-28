@@ -45,7 +45,7 @@ This gets all the steps listed in MongoDB.
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/comingback2life/exChallenge.git
 ```
 
 Go to the project directory
