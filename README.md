@@ -61,10 +61,10 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Start the frontend
 
 ```bash
-  npm run start
+  npm  start
 ```
 
 Start the server (Backend)
