@@ -9,20 +9,18 @@ export const StepForm = () => {
 	const [form, setForm] = useState({});
 	const dispatch = useDispatch();
 	const handleOnChange = (e) => {
-		const { name, value } = e.target;
+		let { name, value } = e.target;
 		if (name === 'dateOfStep') {
-			form.dateOfStep = dayjs(value).format('DD-MMM-YYYY');
+			value = dayjs(value).format('DD-MMM-YYYY');
 		}
 		setForm({
 			...form,
 			[name]: value,
 		});
-		console.log(form, 'hoc');
 	};
 	const handleOnSubmit = async (e) => {
 		e.preventDefault();
 		dispatch(addStepsData(form)) && dispatch(getStepData());
-		console.log(form);
 	};
 	return (
 		<Container className="px-4">
@@ -41,7 +39,7 @@ export const StepForm = () => {
 						</Col>
 						<Col sm={12} md={9} className="d-flex justify-content-end isCol">
 							<input
-								type="text"
+								type="number"
 								name="stepsTaken"
 								className="isTextBox p-4 "
 								onChange={handleOnChange}

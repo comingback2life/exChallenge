@@ -6,10 +6,9 @@ import dayjs from 'dayjs';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStepData } from './StepFormAction';
 export const StepsTable = () => {
-	const [totalSteps, setTotalSteps] = useState([]);
 	const { stepsData } = useSelector((state) => state.steps);
-
 	const dispatch = useDispatch();
+
 	useEffect(() => {
 		dispatch(getStepData());
 	}, []);
@@ -36,8 +35,8 @@ export const StepsTable = () => {
 				</tbody>
 			</Table>
 			<div className="d-flex justify-content-between">
-				<p className="px-5">Total</p>
-				<p className="px-4">{stepsData.totalSteps}</p>
+				<p className="px-5">TOTAL</p>
+				<p className="text-end p-1">{stepsData.totalSteps}</p>
 			</div>
 		</Container>
 	);
