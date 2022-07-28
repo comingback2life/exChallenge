@@ -22,6 +22,7 @@ router.get('/', async (req, res, next) => {
 		next(error);
 	}
 });
+
 router.post('/', async (req, res, next) => {
 	try {
 		const result = await recordSteps(req.body);

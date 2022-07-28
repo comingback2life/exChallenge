@@ -7,8 +7,11 @@ const app = express();
 const PORT = process.env.PORT;
 
 connectDB(); //connect to the database
+
 app.use(express.json());
+
 app.use('/api/v1/steps', stepRouter);
+
 //app error handling
 app.use((err, req, res, next) => {
 	console.log(err);

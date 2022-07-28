@@ -1,8 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { HomePage } from './pages/HomePage.js';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 function App() {
-	return <div className="App"></div>;
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="*" element={<HomePage />}></Route>
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;

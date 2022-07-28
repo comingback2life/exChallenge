@@ -1,0 +1,38 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 50vh;
+	margin-top: 40px;
+}
+.isMidBox {
+	width: 794px;
+	height: 847px;
+	left: 364px;
+	top: 10vh;
+	background: #f9f9f9;
+}
+.isTitle {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 800;
+	font-size: 64px;
+	line-height: 78px;
+	color: #414142;
+}
+.isName {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 39px;
+	color: #39393a;
+}
+.isLabel {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #414142;
+}
