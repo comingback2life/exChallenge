@@ -25,8 +25,8 @@ export const StepsTable = () => {
 				</tbody>
 			</Table>
 			<div className="d-flex justify-content-between">
-				<p className="px-5"> Total</p>
-				<p className="px-4"> 10</p>
+				<p className="px-5">Total</p>
+				<p className="px-4">10</p>
 			</div>
 		</Container>
 	);

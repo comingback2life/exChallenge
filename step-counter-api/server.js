@@ -2,6 +2,8 @@ import 'dotenv/config';
 import express from 'express';
 import { connectDB } from './src/config/dbConfig.js';
 import stepRouter from './src/routers/stepRouter.js';
+import helmet from 'helmet';
+import cors from 'cors';
 const app = express();
 
 const PORT = process.env.PORT;
@@ -9,6 +11,8 @@ const PORT = process.env.PORT;
 connectDB(); //connect to the database
 
 app.use(express.json());
+app.use(helmet());
+app.use(cors());
 
 app.use('/api/v1/steps', stepRouter);
 
