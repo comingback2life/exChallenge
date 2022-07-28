@@ -28,6 +28,7 @@ td {
 tr:last-child {
 	border-bottom: 4px solid #d5d5d6;
 }
+
 @media (max-width: 776px) {
 	.isCol {
 		display: flex;
