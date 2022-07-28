@@ -22,7 +22,9 @@
 .isHR {
 	border: 1px dashed #d5d5d6;
 }
-@media (max-width: 576px) {
+.isBordered {
+}
+@media (max-width: 776px) {
 	.isCol {
 		display: flex;
 		justify-content: flex-start !important;
